@@ -7,6 +7,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private float damage = 10f;
     [SerializeField] private float range = 100f;
     [SerializeField] private Camera fpsCam;
+    [SerializeField] private ParticleSystem muzzleFlash;
     
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,8 @@ public class Gun : MonoBehaviour
 
     void Shoot()
     {
+        muzzleFlash.Play();
+
         RaycastHit hit;
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
