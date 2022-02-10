@@ -5,17 +5,17 @@ using TMPro;
 
 public class MeleeWeapon : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private GameObject ammoDisplay;
 
     // Start is called before the first frame update
     void Start()
     {
-        text.gameObject.SetActive(false);
+        ammoDisplay.SetActive(false);
     }
 
     private void OnEnable()
     {
-        text.gameObject.SetActive(false);
+        ammoDisplay.SetActive(false);
     }
 
     // Update is called once per frame

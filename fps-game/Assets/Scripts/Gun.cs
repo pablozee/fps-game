@@ -19,6 +19,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private bool allowButtonHold;
     [SerializeField] private GameObject bloodSprayPrefab;
     [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private GameObject ammoDisplay;
 
     private int currentAmmo;
     private int bulletsShot;
@@ -33,14 +34,14 @@ public class Gun : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         currentAmmo = magazineSize;
         readyToShoot = true;
-        text.gameObject.SetActive(true);
+        ammoDisplay.SetActive(true);
     }
 
     private void OnEnable()
     {
         reloading = false;
         anim.SetBool("Reloading", false);
-        text.gameObject.SetActive(true);
+        ammoDisplay.SetActive(true);
     }
 
     // Update is called once per frame
@@ -70,7 +71,7 @@ public class Gun : MonoBehaviour
     void Shoot()
     {
         readyToShoot = false;
-
+        anim.SetBool("Recoil", true);
         currentAmmo--;
 
         if (bulletsShot == bulletsPerTap)
@@ -104,6 +105,7 @@ public class Gun : MonoBehaviour
 
     void ResetShot()
     {
+        anim.SetBool("Recoil", false);
         readyToShoot = true;
     }
 
