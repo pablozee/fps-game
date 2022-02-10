@@ -29,22 +29,29 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float attackRadius = 0.5f;
     [SerializeField] private float attackDamage = 5f;
 
+    private Collider collider;
+    private bool isAlive;
+
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
+        collider = GetComponent<CapsuleCollider>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        isAlive = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!isAlive) return;
+
         MovementAnimations();
 
         // Check for sight and attack range
@@ -132,6 +139,8 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
+        if (!isAlive) return;
+
         // Play take damage animation
         SetTakeDamageTrigger();
 
@@ -147,7 +156,8 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log(transform.name + " died");
         SetDieTrigger();
-       // Destroy(gameObject);
+        agent.enabled = false;
+        isAlive = false;    
     }
 
     private void OnDrawGizmosSelected()
