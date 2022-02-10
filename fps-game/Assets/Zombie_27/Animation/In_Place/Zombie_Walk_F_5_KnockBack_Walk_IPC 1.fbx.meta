@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3feeb285851e17345ac5b14b126cfcda
+guid: 1a7065d185544a347b214df96089ccc7
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable:
@@ -498,7 +498,7 @@ ModelImporter:
       takeName: Zombie_Walk_F_5_KnockBack_Walk_IPC
       internalID: 0
       firstFrame: 0
-      lastFrame: 194
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

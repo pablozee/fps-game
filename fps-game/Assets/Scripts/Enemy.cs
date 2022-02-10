@@ -145,7 +145,8 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        Destroy(gameObject);
+        SetDieBool();
+       // Destroy(gameObject);
     }
 
     private void OnDrawGizmosSelected()
