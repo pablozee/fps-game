@@ -20,6 +20,9 @@ public class Gun : MonoBehaviour
     [SerializeField] private GameObject bloodSprayPrefab;
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private GameObject ammoDisplay;
+    [SerializeField] private CameraShake cameraShake;
+    [SerializeField] private float cameraShakeDuration;
+    [SerializeField] private float cameraShakeMagnitude;
 
     private int currentAmmo;
     private int bulletsShot;
@@ -72,6 +75,7 @@ public class Gun : MonoBehaviour
     {
         readyToShoot = false;
         anim.SetBool("Recoil", true);
+        cameraShake.StartCoroutine(cameraShake.Shake(cameraShakeDuration, cameraShakeMagnitude));
         currentAmmo--;
 
         if (bulletsShot == bulletsPerTap)

@@ -190,6 +190,9 @@ MonoBehaviour:
   bloodSprayPrefab: {fileID: 1000012909287652, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}
   text: {fileID: 1735872107}
   ammoDisplay: {fileID: 557828465}
+  cameraShake: {fileID: 672215416}
+  cameraShakeDuration: 0.15
+  cameraShakeMagnitude: 0.1
 --- !u!1001 &21469614
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2441,6 +2444,9 @@ MonoBehaviour:
   bloodSprayPrefab: {fileID: 1000012909287652, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}
   text: {fileID: 1735872107}
   ammoDisplay: {fileID: 557828465}
+  cameraShake: {fileID: 672215416}
+  cameraShakeDuration: 0.15
+  cameraShakeMagnitude: 0.1
 --- !u!1 &220564134 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8048061446112976005, guid: 7446759f59fc82d42a44d851c7aca257, type: 3}
@@ -34935,6 +34941,9 @@ MonoBehaviour:
   bloodSprayPrefab: {fileID: 1000012909287652, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}
   text: {fileID: 1735872107}
   ammoDisplay: {fileID: 557828465}
+  cameraShake: {fileID: 672215416}
+  cameraShakeDuration: 0.15
+  cameraShakeMagnitude: 0.1
 --- !u!1001 &592669822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35484,6 +35493,7 @@ GameObject:
   - component: {fileID: 672215411}
   - component: {fileID: 672215415}
   - component: {fileID: 672215414}
+  - component: {fileID: 672215416}
   m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -35549,13 +35559,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 672215410}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.85, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1855199305}
-  m_Father: {fileID: 804485039}
-  m_RootOrder: 1
+  m_Father: {fileID: 2022164270}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &672215414
 MonoBehaviour:
@@ -35603,6 +35613,18 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &672215416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672215410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdb4cb0ef2fde5c4c8f82a8cd9c55685, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &672469676
 GameObject:
   m_ObjectHideFlags: 0
@@ -36302,6 +36324,9 @@ MonoBehaviour:
   bloodSprayPrefab: {fileID: 1000012909287652, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}
   text: {fileID: 1735872107}
   ammoDisplay: {fileID: 557828465}
+  cameraShake: {fileID: 672215416}
+  cameraShakeDuration: 0.15
+  cameraShakeMagnitude: 0.1
 --- !u!1 &804485037
 GameObject:
   m_ObjectHideFlags: 0
@@ -36352,7 +36377,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1418142987}
-  - {fileID: 672215413}
+  - {fileID: 2022164270}
   - {fileID: 867855691}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -36391,6 +36416,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  cameraShake: {fileID: 672215416}
+  cameraShakeDuration: 0.15
+  cameraShakeMagnitude: 0.1
 --- !u!136 &804485042
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -36558,6 +36586,9 @@ MonoBehaviour:
   bloodSprayPrefab: {fileID: 1000012909287652, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}
   text: {fileID: 1735872107}
   ammoDisplay: {fileID: 557828465}
+  cameraShake: {fileID: 672215416}
+  cameraShakeDuration: 0.15
+  cameraShakeMagnitude: 0.1
 --- !u!1001 &853672987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38268,6 +38299,9 @@ MonoBehaviour:
   bloodSprayPrefab: {fileID: 1000012909287652, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}
   text: {fileID: 1735872107}
   ammoDisplay: {fileID: 557828465}
+  cameraShake: {fileID: 672215416}
+  cameraShakeDuration: 0.15
+  cameraShakeMagnitude: 0.1
 --- !u!1 &924882005
 GameObject:
   m_ObjectHideFlags: 0
@@ -38752,6 +38786,9 @@ MonoBehaviour:
   bloodSprayPrefab: {fileID: 1000012909287652, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}
   text: {fileID: 1735872107}
   ammoDisplay: {fileID: 557828465}
+  cameraShake: {fileID: 672215416}
+  cameraShakeDuration: 0.15
+  cameraShakeMagnitude: 0.1
 --- !u!1 &1045842116
 GameObject:
   m_ObjectHideFlags: 0
@@ -39717,6 +39754,9 @@ MonoBehaviour:
   bloodSprayPrefab: {fileID: 1000012909287652, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}
   text: {fileID: 1735872107}
   ammoDisplay: {fileID: 557828465}
+  cameraShake: {fileID: 672215416}
+  cameraShakeDuration: 0.15
+  cameraShakeMagnitude: 0.1
 --- !u!1 &1215449263 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8048061445914613812, guid: 7446759f59fc82d42a44d851c7aca257, type: 3}
@@ -45190,6 +45230,9 @@ MonoBehaviour:
   bloodSprayPrefab: {fileID: 1000012909287652, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}
   text: {fileID: 1735872107}
   ammoDisplay: {fileID: 557828465}
+  cameraShake: {fileID: 672215416}
+  cameraShakeDuration: 0.15
+  cameraShakeMagnitude: 0.1
 --- !u!1 &1980131040 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8048061445774941619, guid: 7446759f59fc82d42a44d851c7aca257, type: 3}
@@ -45371,6 +45414,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spotLightPrefab: {fileID: 5355879373623522693, guid: 92df470a84f263b43b2cb5133713ca3a, type: 3}
+--- !u!1 &2022164269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2022164270}
+  m_Layer: 7
+  m_Name: Camera Holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2022164270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022164269}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.85, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 672215413}
+  m_Father: {fileID: 804485039}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2027512207 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8048061445973566874, guid: 7446759f59fc82d42a44d851c7aca257, type: 3}
