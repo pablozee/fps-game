@@ -33,12 +33,14 @@ public class Gun : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         currentAmmo = magazineSize;
         readyToShoot = true;
+        text.gameObject.SetActive(true);
     }
 
     private void OnEnable()
     {
         reloading = false;
         anim.SetBool("Reloading", false);
+        text.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
