@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
     [SerializeField] private float maxHealth;
+    [SerializeField] private Image damageOverlay;
     [SerializeField] private CameraShake cameraShake;
     [SerializeField] private float cameraShakeDuration;
     [SerializeField] private float cameraShakeMagnitude;
@@ -20,13 +22,15 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        FadeOutDamageOverlay();
     }
 
     public void TakeDamage(float amount)
     {
         currentHealth -= amount;
-        
+
+        ShowDamageOverlay();
+
         cameraShake.StartCoroutine(cameraShake.Shake(cameraShakeDuration, cameraShakeMagnitude));
 
         Debug.Log("Player took " + amount + " damage.");
@@ -35,6 +39,25 @@ public class PlayerStats : MonoBehaviour
         {
             // Game over
             Debug.Log("Game over. Player died.");
+        }
+    }
+
+    void ShowDamageOverlay()
+    {
+        Color color = damageOverlay.color;
+        color.a = 0.8f;
+        damageOverlay.color = color;
+    }
+
+    void FadeOutDamageOverlay()
+    {
+        if (damageOverlay != null)
+        {
+            if (damageOverlay.color.a <= 0) return;
+
+            Color color = damageOverlay.color;
+            color.a -= 0.01f;
+            damageOverlay.color = color;
         }
     }
 }
