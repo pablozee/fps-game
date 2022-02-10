@@ -145,7 +145,8 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        SetDieBool();
+        Debug.Log(transform.name + " died");
+        SetDieTrigger();
        // Destroy(gameObject);
     }
 
@@ -167,9 +168,9 @@ public class Enemy : MonoBehaviour
         anim.SetTrigger("Attack");
     }
 
-    void SetDieBool()
+    void SetDieTrigger()
     {
-        anim.SetBool("isDead", true);
+        anim.SetTrigger("Die");
     }
 
     void SetTakeDamageTrigger()
