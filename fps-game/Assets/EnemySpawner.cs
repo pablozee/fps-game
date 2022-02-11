@@ -21,6 +21,7 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Random.InitState(System.DateTime.Now.Millisecond);
         while (enemyCount < numberOfEnemiesInLevel)
         {
             OnSpawnEnemy(Random.Range(0, numberOfZombieMeshes + 1));
@@ -53,6 +54,5 @@ public class EnemySpawner : MonoBehaviour
             zombie.transform.GetChild(spawnIndex + 1).gameObject.SetActive(true);
             enemyCount++;
         }
-
     }
 }

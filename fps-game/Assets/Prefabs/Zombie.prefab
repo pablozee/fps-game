@@ -7540,7 +7540,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 1000
+  walkPointRange: 200
   timeBetweenAttacks: 0.3
   sightRange: 10
   attackRange: 1.1

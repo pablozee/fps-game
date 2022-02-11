@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
 
     // Patroling
     [SerializeField] Vector3 walkPoint;
-    private bool walkPointSet = false;
+    private bool walkPointSet;
     [SerializeField] private float walkPointRange;
 
     // Attacking
@@ -47,7 +47,6 @@ public class Enemy : MonoBehaviour
     {
         currentHealth = maxHealth;
         isAlive = true;
-        triangulation = NavMesh.CalculateTriangulation();
     }
 
     // Update is called once per frame
@@ -103,7 +102,7 @@ public class Enemy : MonoBehaviour
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
         float randomX = Random.Range(-walkPointRange, walkPointRange);
 
-        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+        walkPoint = new Vector3(transform.position.x + randomX, 0, transform.position.z + randomZ);
         
         /*
         int vertexIndex = Random.Range(0, triangulation.vertices.Length);
