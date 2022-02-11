@@ -55,6 +55,16 @@ public class Enemy : MonoBehaviour
     {
         if (!isAlive) return;
 
+        if (Vector3.Distance(player.transform.position, transform.position) > 20)
+        {
+            agent.enabled = false;
+            return;
+        }
+        else
+        {
+            agent.enabled = true;
+        }
+
         MovementAnimations();
 
         // Check for sight and attack range
@@ -68,6 +78,8 @@ public class Enemy : MonoBehaviour
         Vector3 newRotation = transform.localEulerAngles;
         newRotation.x = 0f;
         transform.localEulerAngles = newRotation;
+
+        
     }
 
     private void Patroling()
@@ -142,7 +154,7 @@ public class Enemy : MonoBehaviour
 
             PlayerStats playerStats = player.gameObject.GetComponent<PlayerStats>();
 
-            playerStats.TakeDamage(5f);
+            playerStats.TakeDamage(attackDamage);
         }
     }
 

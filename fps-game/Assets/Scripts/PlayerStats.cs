@@ -25,18 +25,21 @@ public class PlayerStats : MonoBehaviour
     void Update()
     {
         FadeOutDamageOverlay();
+        healthBar.SetCurrentHealth(currentHealth);
     }
 
     public void TakeDamage(float amount)
     {
         currentHealth -= amount;
 
-        healthBar.SetCurrentHealth(currentHealth);
 
         ShowDamageOverlay();
 
 
         cameraShake.StartCoroutine(cameraShake.Shake(cameraShakeDuration, cameraShakeMagnitude));
+
+
+        healthBar.SetCurrentHealth(currentHealth);
 
         Debug.Log("Player took " + amount + " damage.");
 

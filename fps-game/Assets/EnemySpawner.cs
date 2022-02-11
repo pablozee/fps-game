@@ -30,6 +30,10 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        while (enemyCount < numberOfEnemiesInLevel)
+        {
+            OnSpawnEnemy(Random.Range(0, numberOfZombieMeshes + 1));
+        }
     }
 
     void OnSpawnEnemy(int spawnIndex)
