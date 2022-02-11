@@ -10,6 +10,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private CameraShake cameraShake;
     [SerializeField] private float cameraShakeDuration;
     [SerializeField] private float cameraShakeMagnitude;
+    [SerializeField] private HealthBar healthBar;
 
     private float currentHealth;
 
@@ -17,6 +18,7 @@ public class PlayerStats : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame
@@ -29,7 +31,10 @@ public class PlayerStats : MonoBehaviour
     {
         currentHealth -= amount;
 
+        healthBar.SetCurrentHealth(currentHealth);
+
         ShowDamageOverlay();
+
 
         cameraShake.StartCoroutine(cameraShake.Shake(cameraShakeDuration, cameraShakeMagnitude));
 
