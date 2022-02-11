@@ -36390,9 +36390,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c97d96bce360bf54f8dad3e9e4ffb8ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: {x: 0, y: 3, z: 0}
   waypointUI: {fileID: 1150401546}
   target: {fileID: 1873187356}
-  offset: {x: 0, y: 3, z: 0}
 --- !u!1 &672469676
 GameObject:
   m_ObjectHideFlags: 0
@@ -48699,7 +48699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f077b8f789025469639b62301bb18e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: 0, z: 0}
+  newOffset: {x: 0, y: 0.3, z: 0}
 --- !u!65 &2132002791
 BoxCollider:
   m_ObjectHideFlags: 0

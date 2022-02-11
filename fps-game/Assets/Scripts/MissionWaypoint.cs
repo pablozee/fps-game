@@ -29,6 +29,13 @@ public class MissionWaypoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SetImageScreenPosition();
+
+        distanceText.text = ((int)Vector3.Distance(target.position, transform.position)).ToString() + "m";
+    }
+
+    void SetImageScreenPosition()
+    {
         float minX = img.GetPixelAdjustedRect().width / 2;
         float maxX = Screen.width - minX;
 
@@ -53,6 +60,5 @@ public class MissionWaypoint : MonoBehaviour
         pos.y = Mathf.Clamp(pos.y, minY, maxY);
 
         img.transform.position = pos;
-        distanceText.text = ((int)Vector3.Distance(target.position, transform.position)).ToString() + "m";
     }
 }

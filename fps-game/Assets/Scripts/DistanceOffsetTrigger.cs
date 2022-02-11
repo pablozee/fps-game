@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DistanceOffsetTrigger : MonoBehaviour
 {
+    [SerializeField] private Vector3 newOffset;
+
+    private Vector3 oldOffset;
     private Camera cam;
     private MissionWaypoint waypoint;
 
@@ -12,6 +15,7 @@ public class DistanceOffsetTrigger : MonoBehaviour
     {
         cam = Camera.main;
         waypoint = cam.GetComponent<MissionWaypoint>();
+        oldOffset = waypoint.offset;
     }
 
     // Update is called once per frame
@@ -26,7 +30,17 @@ public class DistanceOffsetTrigger : MonoBehaviour
         other.TryGetComponent<PlayerStats>(out playerStats);
         if (playerStats != null)
         {
-            waypoint.offset = new Vector3(0f, 0f, 0f);
+            waypoint.offset = newOffset;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        PlayerStats playerStats;
+        other.TryGetComponent<PlayerStats>(out playerStats);
+        if (playerStats != null)
+        {
+            waypoint.offset = oldOffset;
         }
     }
 }
