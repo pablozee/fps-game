@@ -6,12 +6,12 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
-    [SerializeField] private Transform player;
     [SerializeField] private LayerMask whatIsGround, whatIsPlayer;
+    private Transform player;
 
     // Patroling
     [SerializeField] Vector3 walkPoint;
-    private bool walkPointSet;
+    private bool walkPointSet = false;
     [SerializeField] private float walkPointRange;
 
     // Attacking
@@ -32,12 +32,14 @@ public class Enemy : MonoBehaviour
     private Collider collider;
     private bool isAlive;
 
+    private NavMeshTriangulation triangulation;
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
         collider = GetComponent<CapsuleCollider>();
+        player = GameObject.Find("First Person Player").transform;
     }
 
     // Start is called before the first frame update
@@ -45,6 +47,7 @@ public class Enemy : MonoBehaviour
     {
         currentHealth = maxHealth;
         isAlive = true;
+        triangulation = NavMesh.CalculateTriangulation();
     }
 
     // Update is called once per frame
@@ -87,7 +90,18 @@ public class Enemy : MonoBehaviour
         float randomX = Random.Range(-walkPointRange, walkPointRange);
 
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+        
+        /*
+        int vertexIndex = Random.Range(0, triangulation.vertices.Length);
 
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(triangulation.vertices[vertexIndex], out hit, 2f, 0))
+        {
+            walkPoint = triangulation.vertices[vertexIndex];
+            walkPointSet = true;
+        }
+
+        */
         if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
         {
             walkPointSet = true;
