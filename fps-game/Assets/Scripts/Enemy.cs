@@ -55,6 +55,7 @@ public class Enemy : MonoBehaviour
     {
         if (!isAlive) return;
 
+        /*
         if (Vector3.Distance(player.transform.position, transform.position) > 20)
         {
             agent.enabled = false;
@@ -64,6 +65,7 @@ public class Enemy : MonoBehaviour
         {
             agent.enabled = true;
         }
+        */
 
         MovementAnimations();
 
