@@ -57,7 +57,14 @@ public class EnemySpawner : MonoBehaviour
             Debug.Log("Spawning enemy");
             GameObject zombie = Instantiate(zombiePrefab, spawnPosition, Quaternion.identity, transform);
             zombie.transform.GetChild(spawnIndex + 1).gameObject.SetActive(true);
+            Enemy enemy = zombie.GetComponent<Enemy>();
+            enemy.SetEnemySpawner(this);
             enemyCount++;
         }
+    }
+
+    public void DecreaseEnemyCount()
+    {
+        enemyCount--;
     }
 }

@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float attackDamage = 5f;
     [SerializeField] private int numberOfAttackAnimations;
     [SerializeField] private int numberOfWalkAnimations;
+    [SerializeField] private int numberOfTakeDamageAnimations;
 
     private Collider collider;
     private bool isAlive;
@@ -37,6 +38,7 @@ public class Enemy : MonoBehaviour
 
     private NavMeshTriangulation triangulation;
     private bool hasStoppedWalking;
+    private EnemySpawner enemySpawner;
 
     private void Awake()
     {
@@ -214,7 +216,13 @@ public class Enemy : MonoBehaviour
         Debug.Log(transform.name + " died");
         SetDieTrigger();
         agent.enabled = false;
-        isAlive = false;    
+        isAlive = false;
+        enemySpawner.DecreaseEnemyCount();
+    }
+
+    public void SetEnemySpawner(EnemySpawner spawner)
+    {
+        enemySpawner = spawner;
     }
 
     private void OnDrawGizmosSelected()
@@ -243,6 +251,7 @@ public class Enemy : MonoBehaviour
 
     void SetTakeDamageTrigger()
     {
+        anim.SetInteger("TakeDamageIndex", Random.Range(0, numberOfTakeDamageAnimations));
         anim.SetTrigger("TakeDamage");
     }
 }

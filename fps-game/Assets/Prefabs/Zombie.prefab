@@ -7270,7 +7270,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 200
+  walkPointRange: 10
   timeBetweenAttacks: 0.3
   sightRange: 10
   attackRange: 1.1
@@ -7282,6 +7282,7 @@ MonoBehaviour:
   attackDamage: 0.2
   numberOfAttackAnimations: 7
   numberOfWalkAnimations: 12
+  numberOfTakeDamageAnimations: 5
 --- !u!195 &1581041043650481240
 NavMeshAgent:
   m_ObjectHideFlags: 0
