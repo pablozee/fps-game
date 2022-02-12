@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private CharacterController controller;
     [SerializeField]
-    private float speed = 12f;
+    private float speed = 4f;
     [SerializeField]
     private float gravity = -9.81f;
     [SerializeField]
@@ -36,6 +36,12 @@ public class PlayerMovement : MonoBehaviour
         float z = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * z;
+
+        if (Input.GetKey(KeyCode.LeftShift))
+            speed = 8;
+
+        if (!Input.GetKey(KeyCode.LeftShift))
+            speed = 4;
 
         controller.Move(move * speed * Time.deltaTime);
 
