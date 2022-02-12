@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
 
     // Patroling
     [SerializeField] Vector3 walkPoint;
-    private bool walkPointSet;
+    private bool walkPointSet ;
     [SerializeField] private float walkPointRange;
 
     // Attacking
@@ -28,9 +28,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackRadius = 0.5f;
     [SerializeField] private float attackDamage = 5f;
+    [SerializeField] private int numberOfAttackAnimations;
 
     private Collider collider;
     private bool isAlive;
+    private bool setDestination;
 
     private NavMeshTriangulation triangulation;
 
@@ -87,14 +89,21 @@ public class Enemy : MonoBehaviour
     {
         if (!walkPointSet) SearchWalkPoint();
 
-        if (walkPointSet)
+        if (walkPointSet && !setDestination)
+        {
             agent.SetDestination(walkPoint);
+            setDestination = true;
+        }
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
         // Walkpoint reached
         if (distanceToWalkPoint.magnitude < 1f)
+        {
             walkPointSet = false;
+            setDestination = false;
+        }
+        
     }
 
     private void SearchWalkPoint()
@@ -202,6 +211,7 @@ public class Enemy : MonoBehaviour
 
     void SetAttackTrigger()
     {
+        anim.SetInteger("AttackIndex", Random.Range(0, numberOfAttackAnimations));
         anim.SetTrigger("Attack");
     }
 

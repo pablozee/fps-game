@@ -7550,6 +7550,7 @@ MonoBehaviour:
   attackPoint: {fileID: 3467842387478710594}
   attackRadius: 1.5
   attackDamage: 0.2
+  numberOfAttackAnimations: 7
 --- !u!195 &1581041043650481240
 NavMeshAgent:
   m_ObjectHideFlags: 0
