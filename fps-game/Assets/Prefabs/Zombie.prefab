@@ -7551,6 +7551,7 @@ MonoBehaviour:
   attackRadius: 1.5
   attackDamage: 0.2
   numberOfAttackAnimations: 7
+  numberOfWalkAnimations: 12
 --- !u!195 &1581041043650481240
 NavMeshAgent:
   m_ObjectHideFlags: 0

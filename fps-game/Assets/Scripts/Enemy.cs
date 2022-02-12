@@ -29,12 +29,14 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float attackRadius = 0.5f;
     [SerializeField] private float attackDamage = 5f;
     [SerializeField] private int numberOfAttackAnimations;
+    [SerializeField] private int numberOfWalkAnimations;
 
     private Collider collider;
     private bool isAlive;
     private bool setDestination;
 
     private NavMeshTriangulation triangulation;
+    private bool hasStoppedWalking;
 
     private void Awake()
     {
@@ -82,6 +84,20 @@ public class Enemy : MonoBehaviour
         newRotation.x = 0f;
         transform.localEulerAngles = newRotation;
 
+        if (agent.velocity.magnitude < 0.01f && !hasStoppedWalking)
+        {
+            hasStoppedWalking = true;
+        }
+
+        if (agent.velocity.magnitude > 0.01f && hasStoppedWalking)
+        {
+            hasStoppedWalking = false;
+        }
+
+        if (hasStoppedWalking)
+        {
+            UpdateWalkAnimationIndex();
+        }
         
     }
 
@@ -152,6 +168,11 @@ public class Enemy : MonoBehaviour
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
+    }
+
+    void UpdateWalkAnimationIndex()
+    {
+        anim.SetInteger("WalkIndex", Random.Range(0, numberOfWalkAnimations));
     }
 
     private void CheckAttackRadius()
