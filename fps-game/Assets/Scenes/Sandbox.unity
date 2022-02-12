@@ -60392,6 +60392,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1873187356}
     - target: {fileID: 4223946247510068633, guid: a45c8808622294c41b7bc9445dfd4ad5, type: 3}
+      propertyPath: offset.y
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223946247510068633, guid: a45c8808622294c41b7bc9445dfd4ad5, type: 3}
       propertyPath: waypointUI
       value: 
       objectReference: {fileID: 1150401546}
