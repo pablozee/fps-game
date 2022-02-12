@@ -16,7 +16,6 @@ public class DistanceOffsetTrigger : MonoBehaviour
         cam = Camera.main;
         waypoint = cam.GetComponent<MissionWaypoint>();
         oldOffset = waypoint.offset;
-        Debug.Log(oldOffset);
     }
 
     // Update is called once per frame

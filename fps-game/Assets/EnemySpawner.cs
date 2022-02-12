@@ -21,19 +21,24 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Random.InitState(System.DateTime.Now.Millisecond);
-        while (enemyCount < numberOfEnemiesInLevel)
-        {
-            OnSpawnEnemy(Random.Range(0, numberOfZombieMeshes + 1));
-        }
+    //    StartCoroutine(SpawnEnemies());
     }
 
     // Update is called once per frame
     void Update()
     {
+        for (int i = enemyCount - numberOfEnemiesInLevel; i < numberOfEnemiesInLevel; i++)
+        {
+            OnSpawnEnemy(Random.Range(0, numberOfZombieMeshes + 1));
+        }
+    }
+
+    IEnumerator SpawnEnemies()
+    {
         while (enemyCount < numberOfEnemiesInLevel)
         {
             OnSpawnEnemy(Random.Range(0, numberOfZombieMeshes + 1));
+            yield return new WaitForSeconds(0.001f);
         }
     }
 
@@ -46,8 +51,8 @@ public class EnemySpawner : MonoBehaviour
         float y = 0f;
 
         Vector3 spawnPosition = new Vector3(x, y, z);
-
-        if (Physics.Raycast(spawnPosition, -transform.up, 2f, groundLayer))
+        Debug.Log("Spawn position: " + spawnPosition);
+        if (Physics.Raycast(new Vector3(spawnPosition.x, spawnPosition.y + 1, spawnPosition.z), -transform.up, 2f, groundLayer))
         {
             Debug.Log("Spawning enemy");
             GameObject zombie = Instantiate(zombiePrefab, spawnPosition, Quaternion.identity, transform);
