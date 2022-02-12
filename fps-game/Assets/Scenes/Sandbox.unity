@@ -60443,6 +60443,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4223946247604325200, guid: a45c8808622294c41b7bc9445dfd4ad5, type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4223946247604325201, guid: a45c8808622294c41b7bc9445dfd4ad5, type: 3}
       propertyPath: healthBar
       value: 
