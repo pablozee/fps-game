@@ -23,6 +23,10 @@ public class Gun : MonoBehaviour
     [SerializeField] private CameraShake cameraShake;
     [SerializeField] private float cameraShakeDuration;
     [SerializeField] private float cameraShakeMagnitude;
+    [SerializeField] private bool isRPG;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform bulletSpawnPoint;
+    [SerializeField] private float bulletForce;
 
     private int currentAmmo;
     private int bulletsShot;
@@ -78,26 +82,35 @@ public class Gun : MonoBehaviour
         cameraShake.StartCoroutine(cameraShake.Shake(cameraShakeDuration, cameraShakeMagnitude));
         currentAmmo--;
 
-        if (bulletsShot == bulletsPerTap)
-            muzzleFlash.Play();
-
         float x = Random.Range(-spread, spread);
         float y = Random.Range(-spread, spread);
 
         Vector3 direction = fpsCam.transform.forward + new Vector3(x, y, 0);
-
-        RaycastHit hit;
-        if(Physics.Raycast(fpsCam.transform.position, direction, out hit, range))
+        
+        if (!isRPG)
         {
-            Debug.Log(hit.transform.name);
+            if (bulletsShot == bulletsPerTap)
+                muzzleFlash.Play();
 
-            Enemy enemy = hit.transform.GetComponent<Enemy>();
-            if (enemy != null)
+            RaycastHit hit;
+            if (Physics.Raycast(fpsCam.transform.position, direction, out hit, range))
             {
-                enemy.TakeDamage(damage);
-                Instantiate(bloodSprayPrefab, hit.point, hit.transform.rotation);
+                Debug.Log(hit.transform.name);
+
+                Enemy enemy = hit.transform.GetComponent<Enemy>();
+                if (enemy != null)
+                {
+                    enemy.TakeDamage(damage);
+                    Instantiate(bloodSprayPrefab, hit.point, hit.transform.rotation);
+                }
             }
+        } else
+        {
+            GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, transform.rotation);
+            Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
+            bulletRb.AddForce(transform.forward * bulletForce, ForceMode.Impulse);
         }
+        
 
         bulletsShot--;
 
