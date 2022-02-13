@@ -47,10 +47,16 @@ public class RocketExplosion : MonoBehaviour
                 rb.isKinematic = false;
                 rb.useGravity = true;
                 rb.AddExplosionForce(explosionForce, collision.transform.position, explosionRadius);
+                foreach (GameObject limb in zombieLimbs)
+                {
+                    GameObject spawnedLimb = Instantiate(limb, enemy.transform.position, enemy.transform.rotation);
+                    Rigidbody limbRb = spawnedLimb.GetComponent<Rigidbody>();
+                    limbRb.AddExplosionForce(explosionForce, collision.transform.position, explosionRadius);
+                }
                 Destroy(enemy.gameObject);
             }
         }
 
-        
+        Destroy(gameObject);
     }
 }
