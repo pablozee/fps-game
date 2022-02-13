@@ -59897,6 +59897,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spotLightPrefab: {fileID: 5355879373623522693, guid: 92df470a84f263b43b2cb5133713ca3a, type: 3}
+--- !u!4 &1552272665 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4219373670294446696, guid: a45c8808622294c41b7bc9445dfd4ad5, type: 3}
+  m_PrefabInstance: {fileID: 4223946248182283488}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1587716796 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8048061447162812402, guid: 7446759f59fc82d42a44d851c7aca257, type: 3}
@@ -62188,6 +62193,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4219373670294446696, guid: a45c8808622294c41b7bc9445dfd4ad5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4219373670294446696, guid: a45c8808622294c41b7bc9445dfd4ad5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.399
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222196516201814882, guid: a45c8808622294c41b7bc9445dfd4ad5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222273930615852926, guid: a45c8808622294c41b7bc9445dfd4ad5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4223946247301632943, guid: a45c8808622294c41b7bc9445dfd4ad5, type: 3}
       propertyPath: text
       value: 
@@ -62321,9 +62342,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1735872107}
     - target: {fileID: 4223946248513034538, guid: a45c8808622294c41b7bc9445dfd4ad5, type: 3}
+      propertyPath: isRPG
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223946248513034538, guid: a45c8808622294c41b7bc9445dfd4ad5, type: 3}
       propertyPath: ammoDisplay
       value: 
       objectReference: {fileID: 557828465}
+    - target: {fileID: 4223946248513034538, guid: a45c8808622294c41b7bc9445dfd4ad5, type: 3}
+      propertyPath: bulletForce
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223946248513034538, guid: a45c8808622294c41b7bc9445dfd4ad5, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 2670839076118119243, guid: 1a91da4c2e3fbcd4dbafae9aaf82d282, type: 3}
+    - target: {fileID: 4223946248513034538, guid: a45c8808622294c41b7bc9445dfd4ad5, type: 3}
+      propertyPath: bulletSpawnPoint
+      value: 
+      objectReference: {fileID: 1552272665}
     - target: {fileID: 4223946248629773729, guid: a45c8808622294c41b7bc9445dfd4ad5, type: 3}
       propertyPath: ammoDisplay
       value: 
