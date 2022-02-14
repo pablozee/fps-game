@@ -36,6 +36,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] private AudioClip[] zombieHurtClips;
     [SerializeField] private AudioClip[] zombieDieClips;
     [SerializeField] private AudioSource zombieAudioSource;
+    [SerializeField] private float minVolume;
+    [SerializeField] private float maxVolume;
+    [SerializeField] private float minPitch;
+    [SerializeField] private float maxPitch;
 
     private Collider collider;
     private bool isAlive;
@@ -67,6 +71,8 @@ public class Enemy : MonoBehaviour
 
         if (!zombieAudioSource.isPlaying)
         {
+            zombieAudioSource.volume = Random.Range(minVolume, maxVolume);
+            zombieAudioSource.pitch = Random.Range(minPitch, maxPitch);
             zombieAudioSource.clip = zombieWalkClips[Random.Range(0, zombieWalkClips.Length)];
             zombieAudioSource.Play();
         }
@@ -175,6 +181,8 @@ public class Enemy : MonoBehaviour
         {
             // Play attack animation
             SetAttackTrigger();
+            zombieAudioSource.volume = Random.Range(minVolume, maxVolume);
+            zombieAudioSource.pitch = Random.Range(minPitch, maxPitch);
             zombieAudioSource.clip = zombieAttackClips[Random.Range(0, zombieAttackClips.Length)];
             zombieAudioSource.Play();
 
@@ -215,6 +223,8 @@ public class Enemy : MonoBehaviour
 
         // Play take damage animation
         SetTakeDamageTrigger();
+        zombieAudioSource.volume = Random.Range(minVolume, maxVolume);
+        zombieAudioSource.pitch = Random.Range(minPitch, maxPitch);
         zombieAudioSource.clip = zombieHurtClips[Random.Range(0, zombieHurtClips.Length)];
         zombieAudioSource.Play();
 
@@ -229,6 +239,8 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log(transform.name + " died");
         SetDieTrigger();
+        zombieAudioSource.volume = Random.Range(minVolume, maxVolume);
+        zombieAudioSource.pitch = Random.Range(minPitch, maxPitch);
         zombieAudioSource.clip = zombieDieClips[Random.Range(0, zombieDieClips.Length)];
         zombieAudioSource.Play();
         agent.enabled = false;

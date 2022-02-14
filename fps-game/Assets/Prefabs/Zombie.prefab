@@ -7320,6 +7320,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d6fda0cbb9a71ff4687090e63ddda4ae, type: 3}
   - {fileID: 8300000, guid: b87db8feb5b953042a6bc928821b22a7, type: 3}
   zombieAudioSource: {fileID: 2153811165203142950}
+  minVolume: 0.8
+  maxVolume: 1
+  minPitch: 0.8
+  maxPitch: 1.1
 --- !u!82 &2153811165203142950
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7327,7 +7331,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1916796579201672}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
