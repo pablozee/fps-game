@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -51,6 +52,7 @@ public class PlayerStats : MonoBehaviour
         {
             // Game over
             Debug.Log("Game over. Player died.");
+            Die();
         }
     }
 
@@ -71,5 +73,10 @@ public class PlayerStats : MonoBehaviour
             color.a -= 0.01f;
             damageOverlay.color = color;
         }
+    }
+
+    void Die()
+    {
+        SceneManager.LoadScene("GameOver");
     }
 }
