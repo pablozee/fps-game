@@ -27,6 +27,8 @@ public class Gun : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform bulletSpawnPoint;
     [SerializeField] private float bulletForce;
+    [SerializeField] private AudioSource shootAudioSource;
+    [SerializeField] private AudioSource reloadAudioSource;
 
     private int currentAmmo;
     private int bulletsShot;
@@ -86,7 +88,9 @@ public class Gun : MonoBehaviour
         float y = Random.Range(-spread, spread);
 
         Vector3 direction = fpsCam.transform.forward + new Vector3(x, y, 0);
-        
+
+        shootAudioSource.PlayOneShot(shootAudioSource.clip);
+
         if (!isRPG)
         {
             if (bulletsShot == bulletsPerTap)
@@ -131,6 +135,8 @@ public class Gun : MonoBehaviour
         reloading = true;
         Debug.Log("Reloading");
         anim.SetBool("Reloading", true);
+        reloadAudioSource.PlayOneShot(reloadAudioSource.clip);
+
 
         yield return new WaitForSeconds(reloadTime - 0.25f);
         anim.SetBool("Reloading", false);

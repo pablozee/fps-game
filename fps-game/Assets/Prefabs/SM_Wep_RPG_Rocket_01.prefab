@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionForce: 2000
-  explosionRadius: 10
+  explosionRadius: 8
   explosionDamage: 200
   rocketExplosionFX: {fileID: 1879769179923522, guid: 65932b7368590234d8163da03c2055d8, type: 3}
   zombieLimbs:
