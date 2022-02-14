@@ -11,6 +11,8 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private float cameraShakeDuration;
     [SerializeField] private float cameraShakeMagnitude;
     [SerializeField] private HealthBar healthBar;
+    [SerializeField] private AudioClip[] audioClips;
+    [SerializeField] private AudioSource hurtAudioSource;
 
     private float currentHealth;
 
@@ -32,6 +34,8 @@ public class PlayerStats : MonoBehaviour
     {
         currentHealth -= amount;
 
+        hurtAudioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
+        hurtAudioSource.Play();
 
         ShowDamageOverlay();
 
