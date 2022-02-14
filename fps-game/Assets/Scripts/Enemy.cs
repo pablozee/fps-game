@@ -31,6 +31,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int numberOfAttackAnimations;
     [SerializeField] private int numberOfWalkAnimations;
     [SerializeField] private int numberOfTakeDamageAnimations;
+    [SerializeField] private AudioClip[] zombieWalkClips;
+    [SerializeField] private AudioClip[] zombieAttackClips;
+    [SerializeField] private AudioClip[] zombieHurtClips;
+    [SerializeField] private AudioClip[] zombieDieClips;
+    [SerializeField] private AudioSource zombieAudioSource;
 
     private Collider collider;
     private bool isAlive;
@@ -59,6 +64,12 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         if (!isAlive) return;
+
+        if (!zombieAudioSource.isPlaying)
+        {
+            zombieAudioSource.clip = zombieWalkClips[Random.Range(0, zombieWalkClips.Length)];
+            zombieAudioSource.Play();
+        }
 
         /*
         if (Vector3.Distance(player.transform.position, transform.position) > 20)
@@ -164,6 +175,8 @@ public class Enemy : MonoBehaviour
         {
             // Play attack animation
             SetAttackTrigger();
+            zombieAudioSource.clip = zombieAttackClips[Random.Range(0, zombieAttackClips.Length)];
+            zombieAudioSource.Play();
 
             CheckAttackRadius();
 
@@ -202,7 +215,8 @@ public class Enemy : MonoBehaviour
 
         // Play take damage animation
         SetTakeDamageTrigger();
-
+        zombieAudioSource.clip = zombieHurtClips[Random.Range(0, zombieHurtClips.Length)];
+        zombieAudioSource.Play();
 
         currentHealth -= amount;
         if (currentHealth <= 0f)
@@ -215,6 +229,8 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log(transform.name + " died");
         SetDieTrigger();
+        zombieAudioSource.clip = zombieDieClips[Random.Range(0, zombieDieClips.Length)];
+        zombieAudioSource.Play();
         agent.enabled = false;
         isAlive = false;
         enemySpawner.DecreaseEnemyCount();

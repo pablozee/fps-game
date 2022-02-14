@@ -7159,6 +7159,7 @@ GameObject:
   - component: {fileID: 95057615463316896}
   - component: {fileID: 5460816562171223023}
   - component: {fileID: 3546862586727771574}
+  - component: {fileID: 2153811165203142950}
   - component: {fileID: 1581041043650481240}
   - component: {fileID: 5904639365986462714}
   - component: {fileID: 721254730027628145}
@@ -7296,6 +7297,125 @@ MonoBehaviour:
   numberOfAttackAnimations: 7
   numberOfWalkAnimations: 12
   numberOfTakeDamageAnimations: 5
+  zombieWalkClips:
+  - {fileID: 8300000, guid: fbae56a83a0566a4da39335548311771, type: 3}
+  - {fileID: 8300000, guid: 442ada03aa79baf49935bcebbde38af6, type: 3}
+  - {fileID: 8300000, guid: ecfa630a76c3a7a46846d8c123ae8b13, type: 3}
+  - {fileID: 8300000, guid: c818ea17eca061340a6cce44a99813b6, type: 3}
+  - {fileID: 8300000, guid: b5b002d1decc6004382b40709e884c33, type: 3}
+  - {fileID: 8300000, guid: 4485a448d14ecaf4e8c45578965dbeb9, type: 3}
+  zombieAttackClips:
+  - {fileID: 8300000, guid: 20502f505a35d8e4fac620616dd08775, type: 3}
+  - {fileID: 8300000, guid: 702f5c755d5d9b64a9c3a44db3da7f9b, type: 3}
+  - {fileID: 8300000, guid: ec00f8816fcc1f042a9711eaf5ffbbbe, type: 3}
+  - {fileID: 8300000, guid: ddc9ac6de8731f7409f2a9219ddac69f, type: 3}
+  - {fileID: 8300000, guid: 6a3aff5d139449e45aad23d2c4e70939, type: 3}
+  - {fileID: 8300000, guid: 5f8427e341443e9458dd72571b5de8a4, type: 3}
+  zombieHurtClips:
+  - {fileID: 8300000, guid: aa51ffe77f9d65045a0765f5377cf9d0, type: 3}
+  - {fileID: 8300000, guid: 6d606002eaed6f548babd766ca964066, type: 3}
+  - {fileID: 8300000, guid: a2011e5f6e7d9fa49910d25abd034ae3, type: 3}
+  zombieDieClips:
+  - {fileID: 8300000, guid: 151d2c0998256144bab9023b69ff2fca, type: 3}
+  - {fileID: 8300000, guid: d6fda0cbb9a71ff4687090e63ddda4ae, type: 3}
+  - {fileID: 8300000, guid: b87db8feb5b953042a6bc928821b22a7, type: 3}
+  zombieAudioSource: {fileID: 2153811165203142950}
+--- !u!82 &2153811165203142950
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916796579201672}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 2
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!195 &1581041043650481240
 NavMeshAgent:
   m_ObjectHideFlags: 0
