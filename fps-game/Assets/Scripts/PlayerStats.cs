@@ -35,7 +35,7 @@ public class PlayerStats : MonoBehaviour
     {
         currentHealth -= amount;
 
-        hurtAudioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
+      //  hurtAudioSource.clip = audioClips[Random.Range(0, audioClips.Length)];
        // hurtAudioSource.Play();
 
         ShowDamageOverlay();
