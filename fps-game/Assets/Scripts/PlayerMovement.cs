@@ -20,6 +20,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private LayerMask groundMask;
 
+    [SerializeField] private AudioSource footstepsAudioSource;
+    [SerializeField] private float minVolume;
+    [SerializeField] private float maxVolume;
+    [SerializeField] private float minPitch;
+    [SerializeField] private float maxPitch;
+
+
+
     private Vector3 velocity;
     private bool isGrounded;
 
@@ -42,6 +50,16 @@ public class PlayerMovement : MonoBehaviour
 
         if (!Input.GetKey(KeyCode.LeftShift))
             speed = 4;
+
+        if (x > 0.01f || z > 0.01f || x < -0.01f || z < -0.01f)
+        {
+            if (!footstepsAudioSource.isPlaying && isGrounded)
+            {
+                footstepsAudioSource.volume = Random.Range(minVolume, maxVolume);
+                footstepsAudioSource.pitch = Random.Range(minPitch, maxPitch);
+                footstepsAudioSource.Play();
+            }
+        }
 
         controller.Move(move * speed * Time.deltaTime);
 
