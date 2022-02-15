@@ -60088,7 +60088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cb0d41ce62e26a4cbee8e5ded169d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfEnemiesInLevel: 100
+  numberOfEnemiesInLevel: 300
   zombiePrefab: {fileID: 1916796579201672, guid: f779e218f0bc52f4eb9cca15c41e9b48, type: 3}
   numberOfZombieMeshes: 48
   topRight: {fileID: 1483778917}
