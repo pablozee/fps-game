@@ -125,6 +125,8 @@ MonoBehaviour:
   - {fileID: 1123163710934634, guid: b55e9677d0fb2334693c107b40b4edf3, type: 3}
   - {fileID: 1990073723734734, guid: 9641d5e463f0d1c439981667fc270d65, type: 3}
   explosionAudioSource: {fileID: -8094159623693583194}
+  cameraShakeDuration: 0.2
+  cameraShakeMagnitude: 0.2
 --- !u!65 &-3200325150208397473
 BoxCollider:
   m_ObjectHideFlags: 0

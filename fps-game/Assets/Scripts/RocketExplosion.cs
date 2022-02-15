@@ -11,13 +11,19 @@ public class RocketExplosion : MonoBehaviour
     [SerializeField] private GameObject rocketExplosionFX;
     [SerializeField] private List<GameObject> zombieLimbs;
     [SerializeField] private AudioSource explosionAudioSource;
+    [SerializeField] private float cameraShakeDuration;
+    [SerializeField] private float cameraShakeMagnitude;
 
     private Collider col;
+    private Camera cam;
+    private CameraShake cameraShake;
 
     // Start is called before the first frame update
     void Start()
     {
         col = GetComponent<Collider>();
+        cam = Camera.main;
+        cameraShake = cam.GetComponent<CameraShake>();
     }
 
     // Update is called once per frame
@@ -33,12 +39,11 @@ public class RocketExplosion : MonoBehaviour
 
         explosionAudioSource.PlayOneShot(explosionAudioSource.clip);
 
+        StartCoroutine(cameraShake.Shake(cameraShakeDuration, cameraShakeMagnitude));
+
         Collider[] collidersHit = Physics.OverlapSphere(collision.transform.position, explosionRadius);
 
-        if (collidersHit.Length > 0)
-        {
-            particleSystem.Play();
-        }
+        particleSystem.Play();
 
         foreach (Collider hitCol in collidersHit)
         {

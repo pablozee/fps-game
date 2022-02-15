@@ -60088,7 +60088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cb0d41ce62e26a4cbee8e5ded169d24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfEnemiesInLevel: 300
+  numberOfEnemiesInLevel: 500
   zombiePrefab: {fileID: 1916796579201672, guid: f779e218f0bc52f4eb9cca15c41e9b48, type: 3}
   numberOfZombieMeshes: 48
   topRight: {fileID: 1483778917}
@@ -64481,6 +64481,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1735872107}
     - target: {fileID: 4223946247607273655, guid: a45c8808622294c41b7bc9445dfd4ad5, type: 3}
+      propertyPath: damage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223946247607273655, guid: a45c8808622294c41b7bc9445dfd4ad5, type: 3}
       propertyPath: ammoDisplay
       value: 
       objectReference: {fileID: 557828465}
@@ -64576,6 +64580,14 @@ PrefabInstance:
       propertyPath: reloadAudioSource
       value: 
       objectReference: {fileID: 655108515}
+    - target: {fileID: 4223946248513034538, guid: a45c8808622294c41b7bc9445dfd4ad5, type: 3}
+      propertyPath: cameraShakeDuration
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223946248513034538, guid: a45c8808622294c41b7bc9445dfd4ad5, type: 3}
+      propertyPath: cameraShakeMagnitude
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 4223946248629773729, guid: a45c8808622294c41b7bc9445dfd4ad5, type: 3}
       propertyPath: ammoDisplay
       value: 
