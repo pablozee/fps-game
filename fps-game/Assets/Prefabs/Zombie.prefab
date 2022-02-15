@@ -7293,7 +7293,7 @@ MonoBehaviour:
   maxHealth: 100
   attackPoint: {fileID: 3467842387478710594}
   attackRadius: 1.5
-  attackDamage: 4
+  attackDamage: 1
   numberOfAttackAnimations: 7
   numberOfWalkAnimations: 12
   numberOfTakeDamageAnimations: 5
